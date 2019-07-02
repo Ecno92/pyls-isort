@@ -8,7 +8,7 @@ def sort(document, override=None):
     source = override or document.source
     sorted_source = SortImports(
         file_contents=source,
-        settings_path=os.path.dirname(os.path.abspath(document.path))
+        # settings_path=os.path.dirname(os.path.abspath(document.path))  # workaround to adopt default settings
     ).output
     if source == sorted_source:
         return
